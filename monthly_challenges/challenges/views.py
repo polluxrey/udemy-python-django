@@ -35,11 +35,15 @@ def monthly_challenge_by_number(request, month):
 
 
 def monthly_challenge(request, month):
-    challenge_text = None
-
     if month in monthly_challenges:
-        challenge_text = f"{month.capitalize()}: {monthly_challenges.get(month)}"
+        response_data = f"""<html>
+    <body>
+        <h1>{month.capitalize()}</h1>
+        <p>{monthly_challenges.get(month)}</p>
+    </body>
+</html>
+"""
     else:
         return HttpResponseNotFound("This month is not supported!")
 
-    return HttpResponse(challenge_text)
+    return HttpResponse(response_data)
