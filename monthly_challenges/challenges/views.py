@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
+from django.template import loader
 
 # Create your views here.
 
@@ -18,6 +19,24 @@ monthly_challenges = {
     "november": "🎶 Eleven Pipers Piping – Listen to something inspiring.",
     "december": "🥁 Twelve Drummers Drumming – Celebrate your progress!"
 }
+
+
+def index(request):
+    months = list(monthly_challenges.keys())
+    month_paths = [reverse("month-challenge", args=[month])
+                   for month in months]
+
+    month_path_dict = {}
+    for i, j in zip(months, month_paths):
+        month_path_dict.update({i: j})
+
+    template = loader.get_template("index.html")
+
+    context = {
+        "data": month_path_dict
+    }
+
+    return HttpResponse(template.render(context, request))
 
 
 def monthly_challenge_by_number(request, month):

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <ul>
+    {% for month, url in data.items %}
+        <li>
+           <a href="{{ url }}">{{ month|capfirst }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
