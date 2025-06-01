@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 # Create your views here.
 
 # Used list for the previous topic (Path Converters)
-month_list = ["january", "february", "march",
-              "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+# month_list = ["january", "february", "march",
+#               "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 
 monthly_challenges = {
     "january": "🍐 Partridge in a Pear Tree – Eat one nourishing meal.",
@@ -32,13 +32,18 @@ def monthly_challenge_by_number(request, month):
     # else:
     #     return HttpResponseNotFound("This month is not supported!")
 
+    month_list = list(monthly_challenges.keys())
+
     if 1 <= month and month <= len(month_list):
         month_name = month_list[month - 1]
-        challenge_text = f"{month_name.capitalize()}: {monthly_challenges.get(month_name)}"
+        # challenge_text = f"{month_name.capitalize()}: {monthly_challenges.get(month_name)}"
     else:
         return HttpResponseNotFound("This month is not supported!")
 
-    return HttpResponse(challenge_text)
+    # Used for the previous topic (Addming More Dynamic View Logic)
+    # return HttpResponse(challenge_text)
+
+    return HttpResponseRedirect("/challenges/" + month_name)
 
 
 def monthly_challenge(request, month):
