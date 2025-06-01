@@ -7,6 +7,17 @@ month_list = ["january", "february", "march",
               "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 
 
+def monthly_challenge_by_number(request, month):
+    challenge_text = None
+
+    if 1 <= month and month <= len(month_list):
+        challenge_text = f"This is for the {month_list[month - 1].capitalize()} Challenge page!"
+    else:
+        return HttpResponseNotFound("This month is not supported!")
+
+    return HttpResponse(challenge_text)
+
+
 def monthly_challenge(request, month):
     challenge_text = None
 
