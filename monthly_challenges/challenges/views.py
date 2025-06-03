@@ -30,13 +30,11 @@ def index(request):
     for i, j in zip(months, month_paths):
         month_path_dict.update({i: j})
 
-    template = get_template("challenges/index.html")
-
     context = {
         "data": month_path_dict
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, "challenges/index.html", context=context)
 
 
 def monthly_challenge_by_number(request, month):
@@ -59,8 +57,6 @@ def monthly_challenge(request, month):
             "month": month,
             "challenge": monthly_challenges[month]
         }
-        response_data = render_to_string("challenges/challenge.html", context=context)
+        return render(request, "challenges/challenge.html", context=context)
     else:
         return HttpResponseNotFound("This month is not supported!")
-
-    return HttpResponse(response_data)
