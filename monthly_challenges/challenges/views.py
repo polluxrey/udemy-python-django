@@ -54,7 +54,7 @@ def monthly_challenge_by_number(request, month):
 def monthly_challenge(request, month):
     if month in monthly_challenges:
         context = {
-            "month": month,
+            "month": month.capitalize(),
             "challenge": monthly_challenges[month]
         }
         return render(request, "challenges/challenge.html", context=context)
