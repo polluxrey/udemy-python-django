@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block page_title %}{{ month|title }} Challenge{% endblock %}
 
 {% block content %}
-    {% include "challenges/includes/header.html" %}
-
-    <h1>{{ month|title }}</h1>
+    {% comment %} <h1>{{ month|title }}</h1>
     {% if challenge %}
         <p>{{ challenge }}</p>
     {% else %}
         <p>No challenge available 😭 </p>
-    {% endif %}
+    {% endif %} {% endcomment %}
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <img src="{% static "challenges/images/month_icons/" %}{{ month }}.png">
+        </div>
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold">{{ month|upper }}</h1>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card {% if not challenge %}text-white bg-danger{% endif %}" style="width: 20rem;">
+                <div class="card-body">
+                    <p class="card-text">{{ challenge }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

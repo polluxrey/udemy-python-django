@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 
-{% block page_title %}All Challenges{% endblock %}
+{% load static %}
+
+{% block page_title %}Monthly Challenges{% endblock %}
+
+{% block stylesheet%}<link rel="stylesheet" href="{% static 'challenges/styles.css' %}">{% endblock %}
 
 {% block content %}
-    {% include "challenges/includes/header.html" %}
-
-    <ul>
-    {% for month in months %}
-        <li>
-            <a href="{% url "month-challenge" month %}">{{ month|capfirst }}</a>
-        </li>
-    {% endfor %}
-    </ul>
+    <div class="container mt-5">
+        <div class="row">
+            {% for month in months %}
+                <div class="col-12 col-md-3 mb-4 text-center VLkLQ">
+                    <a href="{% url "month-challenge" month %}">
+                        <img class="qqZbH" src="{% static "challenges/images/month_icons/" %}{{ month }}.png">
+                        <h1 class="JdeVG">{{ month|upper }}</h1>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title %}My Challenges{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    {% block stylesheet %}{% endblock %}
 </head>
 <body>
+    {% include "includes/header.html" %}
     {% block content %}
     {% endblock %}
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
