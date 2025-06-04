@@ -17,7 +17,7 @@ monthly_challenges = {
     "september": "💃 Nine Ladies Dancing – Do something that brings pure joy.",
     "october": "🕴 Ten Lords A-Leaping – Take a small leap outside your comfort zone.",
     "november": "🎶 Eleven Pipers Piping – Listen to something inspiring.",
-    "december": "🥁 Twelve Drummers Drumming – Celebrate your progress!"
+    "december": None
 }
 
 
