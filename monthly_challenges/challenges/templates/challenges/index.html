@@ -3,6 +3,8 @@
 {% block page_title %}All Challenges{% endblock %}
 
 {% block content %}
+    {% include "challenges/includes/header.html" %}
+
     <ul>
     {% for month in months %}
         <li>
