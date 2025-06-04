@@ -23,15 +23,9 @@ monthly_challenges = {
 
 def index(request):
     months = list(monthly_challenges.keys())
-    month_paths = [reverse("month-challenge", args=[month])
-                   for month in months]
-
-    month_path_dict = {}
-    for i, j in zip(months, month_paths):
-        month_path_dict.update({i: j})
 
     context = {
-        "data": month_path_dict
+        "months": months
     }
 
     return render(request, "challenges/index.html", context=context)

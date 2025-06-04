@@ -2,9 +2,9 @@
 <html>
 <body>
     <ul>
-    {% for month, url in data.items %}
+    {% for month in months %}
         <li>
-           <a href="{{ url }}">{{ month|capfirst }}</a>
+           <a href="{% url "month-challenge" month %}">{{ month|capfirst }}</a>
         </li>
     {% endfor %}
     </ul>
