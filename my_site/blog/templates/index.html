@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ user.nickname }}'s Blog
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid h-100">
+    <div class="row text-center justify-content-center p-3 p-sm-5 s62bL">
+      <h2><b>DevBlog</b> - A Blog Made For Developers</h2>
+      <p class="fs-5">Subscribe and get my latest blog post in your inbox.</p>
+      <form class="d-flex justify-content-center">
+        <input type="text" class="form-control me-3" id="email" placeholder="Enter email" style="max-width: 350px;" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+    <div class="row p-3 p-sm-5">
+      <div class="card mb-3" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img src="..." class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

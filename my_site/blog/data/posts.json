@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Hello World!",
+        "slug": "hello-world",
+        "short_url": "JN7rc",
+        "content": "**First post!** 🎉<br><br>Wish me luck-I have no idea what I'm doing 😄",
+        "created_at": "2025-06-05T06:10:07.122Z",
+        "published": true
+    },
+    {
+        "id": 2,
+        "title": "About my dogs (and me)",
+        "slug": "about-me",
+        "short_url": "8V4iZ",
+        "content": "**Hello! 👋 I'm Pollux.** I am a Computer Science graduate, and my last position was as a university lecturer, where I taught Discrete Math, Artificial Intelligence, and Cryptography—basically, lots of number-crunching and computations 🧮.<br><br>When I'm not at work, you'll usually find me out on my bike 🚴 or doing some strength training 🏋️—anything to stay active. On weekends, I'm a devoted fan of RuPaul's Drag Race 💅, and I always tune in to Roscoe's viewing party on YouTube to see everyone's reactions. I also head back home to Buyabod as often as I can, because that's where my four dogs live: **Pumpkin, Marian, Orange, and Apple** 🐶.<br><br>**Pumpkin** 🎃 was the first dog I adopted during the pandemic. She's my oldest—likes to sleep on my bed, terrified of thunder, and a little sassy, but undeniably loving. **Marian** came into our lives later. She was someone else's dog and had a brother named **Dingdong**. She's the mom of Orange and Apple, and you can really feel her maternal instincts—she never fights for food and gently scolds her kids when they get too rowdy.<br><br>**Orange 🍊 and Apple 🍎** are both energetic little troublemakers, but they're incredibly sweet. They'll sit perfectly still if I pick them up for a hug. Then there's **Coffee** ☕, who was very special to me. The night before we adopted him, he was crying outside our house; we assumed he was a neighbor's pup, but the next morning we realized he'd been abandoned. He was tiny, filthy, and obviously needed help, so we took him in—hoping Pumpkin would have a friend, though Pumpkin and Coffee didn't exactly become best buds.<br><br>Coffee needed extra care: he was always getting sick. I remember worrying he wouldn't make it in those early days after we brought him home. He had convulsions several times—I was heartbroken watching him struggle. Once, when we moved to a new house that didn't yet have railings on the rooftop, he fell off but, thankfully, landed on a neighbor's roof below. It was a terrifying experience, but he survived.<br><br>Sadly, after three years with us, Coffee passed away. I wasn't home when he died—I was working—and I've never forgiven myself for not being there. He spent his last days puking blood, and it was clear he couldn't eat anymore. I wish I had been there with him. Even now, I miss him every day 🥺.<br><br>Coffee's passing was bittersweet. For a while, I hesitated to look for work outside our province because I worried about leaving my dogs behind. But the day he died felt like his way of telling me, “Go live your life—I'll be okay.” That became my motivation to move forward and apply for jobs in Manila. Everything I do right now is dedicated to him—he was more than just a dog to me, especially as an only child. My dogs have always been the ones I could pour my heart out to, without fear of judgment.<br><br>So, that's me in a nutshell: a bit about my professional life, but mostly about my four-legged family. I know it's heavy on the dog stories, but what can I say? They're my world. Thanks for listening to my “TED Talk!”<br><br>**Oh, and one more thing: I love coffee—oat milk lattes are my go-to.**",
+        "created_at": "2025-06-05T15:02:45.736Z",
+        "published": true
+    },
+    {
+        "id": 3,
+        "title": "What is this for?",
+        "slug": "what-is-this-for",
+        "short_url": "C7IFx",
+        "content": "This is my first project from the Udemy course \"Python Django - The Practical Guide.\"<br><br>**Note:** This project does not include database integration. Instead, JSON files are used to simulate a database.",
+        "created_at": "2025-06-05T15:03:03.531Z",
+        "published": true
+    },
+    {
+        "id": 4,
+        "title": "Lorem ipsum",
+        "slug": "lorem-ipsum",
+        "short_url": "IS9w8",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada ullamcorper turpis sit amet porta. Ut eget ante mattis, posuere mauris at, tempus enim. Aenean sapien est, porta in diam id, vehicula tristique massa. Pellentesque nulla erat, sollicitudin eu ipsum a, pharetra tempor quam. Nulla sed auctor sem. Fusce id semper massa. Suspendisse tempor mi sed rhoncus laoreet. Donec malesuada placerat massa, eget euismod tortor volutpat eu.",
+        "created_at": "2025-06-05T15:04:30.333Z",
+        "published": true
+    }
+]

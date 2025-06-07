@@ -1,0 +1,39 @@
+html *
+{
+    font-family: Roboto;
+}
+
+.aEx2T {
+    color: rgba(255, 255, 255, 1);
+}
+
+.aEx2T:hover {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+}
+
+.fSG8k {
+    border: thick solid rgba(255, 255, 255, .5);
+}
+
+.Lak2A {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+}
+
+.r7Doe {
+    color: rgba(255, 255, 255, 1);
+    background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-4377.jpg");
+    background-size: cover;
+}
+
+.s62bL {
+    background-color: rgba(247, 247, 249, 1);
+}
+
+.Ufm6G {
+    filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 1));
+}
+
+.Ufm6G a {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+}

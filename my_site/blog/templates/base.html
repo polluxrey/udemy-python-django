@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My Blog{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "bootstrap-icons/bootstrap-icons.css" %}">
+</head>
+<body>
+    <div class="container-fluid">
+        {% with request.resolver_match.url_name as url_name %}
+            <div class="row min-vh-100">
+                {% if url_name == "MDlmY" %}
+                    <!-- Sidebar -->
+                    <div class=" col-12 col-sm-3 p-4 r7Doe">
+                        {% include "includes/sidebar.html" %} 
+                    </div>
+                {% else %}
+                    <!-- Navbar -->
+                    {% include "includes/header.html" %}
+                {% endif %}
+
+                {% if url_name == "MDlmY" %}
+                    <!-- Content -->
+                    <div class="col-12 col-sm-9 p-0">
+                {% else %}
+                {% endif %}
+
+                {% block content %}
+                {% endblock %}
+
+                {% if url_name == "MDlmY" %}
+                    </div>
+                {% else %}
+                {% endif %}
+            </div>
+        {% endwith %}
+    </div>
+    <script src="{% static "bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+</body>
+</html>
