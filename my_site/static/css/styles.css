@@ -26,6 +26,10 @@ a:active {
     color: rgba(255, 255, 255, 1);
 }
 
+.bUs59 a:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
 .bUs59 nav-link active {
     font-weight: bold;
 }
@@ -59,12 +63,13 @@ a:active {
 }
 
 .u9Fi9:hover {
-    font-weight: bolder;
+    background-color: rgba(247, 247, 249, 1);
+    transition: 0.3s ease-in-out;
 }
 
 .uC0S9 {
     width: 100%;
-    height: 180px;
+    height: 27vh;
     object-fit: cover;
 }
 

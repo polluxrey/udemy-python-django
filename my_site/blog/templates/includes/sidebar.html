@@ -11,15 +11,9 @@
   </div>
   <hr class="my-2" style="width:100%" />
   {% with url_name=request.resolver_match.url_name %}
-    <h5 class="text-center {% if url_name == 'MDlmY' %}
-        fw-bold
-      {% else %}
-        fw-light
-      {% endif %}">
-      Home
-    </h5>
+    <h5 class="text-center fw-bold">Home</h5>
     <hr class="my-2" style="width:100%" />
-    <h5 class="text-center fw-light">View All Posts</h5>
+    <h5 class="text-center fw-light"><a href="{% url 'qAtTF' %}">View All Posts</a></h5>
     <hr class="my-2" style="width:100%" />
     <h5 class="text-center fw-light">About Me</h5>
     <hr class="my-2" style="width:100%" />
