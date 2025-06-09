@@ -6,14 +6,14 @@
     <title>{% block title %}My Blog{% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "bootstrap-icons/bootstrap-icons.css" %}">
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
 </head>
 <body>
+    {% with request.resolver_match.url_name as url_name %}
     <div class="container-fluid">
-        {% with request.resolver_match.url_name as url_name %}
-            <div class="row min-vh-100">
+            <div class="row{% if url_name == "MDlmY" %} min-vh-100{% endif %}">
                 {% if url_name == "MDlmY" %}
                     <!-- Sidebar -->
                     <div class=" col-12 col-sm-3 p-4 r7Doe">

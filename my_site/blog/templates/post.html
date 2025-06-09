@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load markdown_extras %}
+
+{% block title %}
+  {{ user.nickname }}'s Blog
+{% endblock %}
+
+{% block content %}
+  <div class="container p-0">
+    <div class="container p-0 mb-4 h2Oi9">
+      <img src="{{ post.image_url }}" class="zq2Ns" />
+      <div class="d-flex flex-column align-items-start tN88c">
+        <h1 class="display-2 text-start mb-3"><mark class="p-0">{{ post.title }}</mark></h1>
+        <h4><span class="badge bg-primary">{{ post.created_at }}</span></h4>
+      </div>
+    </div>
+    <div class="container fs-4 I2g9P">{{ post.content|markdown|safe }}</div>
+  </div>
+{% endblock %}

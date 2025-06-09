@@ -1,7 +1,8 @@
 import json
 import os
 from django.conf import settings
-from django.shortcuts import render
+from django.http import HttpResponseNotFound
+from django.shortcuts import render, redirect
 
 INDEX_POSTS_LIMIT = 3
 
@@ -26,3 +27,26 @@ def index(request):
     }
 
     return render(request, "index.html", context=context)
+
+def view_post(request, slug):
+    post = None
+
+    normalized_slug = slug.lower()
+
+    for p in posts:
+        if normalized_slug == p["slug"]:
+            post = p
+            break
+
+    if post is None:
+        return HttpResponseNotFound("Article not found!")
+    
+    if (slug != normalized_slug) and post:
+        return redirect(request.path.lower(), permanent=True)
+
+    context = {
+        "user": user,
+        "post": post,
+    }
+
+    return render(request, "post.html", context=context)

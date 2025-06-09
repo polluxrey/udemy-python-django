@@ -5,34 +5,58 @@
         "slug": "hello-world",
         "short_url": "JN7rc",
         "content": "**First post!** 🎉<br><br>Wish me luck-I have no idea what I'm doing 😄",
+        "image_url": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "created_at": "2025-06-05T06:10:07.122Z",
         "published": true
     },
     {
         "id": 2,
-        "title": "About my dogs (and me)",
-        "slug": "about-me",
+        "title": "Breaking Down the Latest Tech Trends: What You Need to Know",
+        "slug": "breaking-down-the-latest-tech-trends-what-you-need-to-know",
         "short_url": "8V4iZ",
-        "content": "**Hello! 👋 I'm Pollux.** I am a Computer Science graduate, and my last position was as a university lecturer, where I taught Discrete Math, Artificial Intelligence, and Cryptography—basically, lots of number-crunching and computations 🧮.<br><br>When I'm not at work, you'll usually find me out on my bike 🚴 or doing some strength training 🏋️—anything to stay active. On weekends, I'm a devoted fan of RuPaul's Drag Race 💅, and I always tune in to Roscoe's viewing party on YouTube to see everyone's reactions. I also head back home to Buyabod as often as I can, because that's where my four dogs live: **Pumpkin, Marian, Orange, and Apple** 🐶.<br><br>**Pumpkin** 🎃 was the first dog I adopted during the pandemic. She's my oldest—likes to sleep on my bed, terrified of thunder, and a little sassy, but undeniably loving. **Marian** came into our lives later. She was someone else's dog and had a brother named **Dingdong**. She's the mom of Orange and Apple, and you can really feel her maternal instincts—she never fights for food and gently scolds her kids when they get too rowdy.<br><br>**Orange 🍊 and Apple 🍎** are both energetic little troublemakers, but they're incredibly sweet. They'll sit perfectly still if I pick them up for a hug. Then there's **Coffee** ☕, who was very special to me. The night before we adopted him, he was crying outside our house; we assumed he was a neighbor's pup, but the next morning we realized he'd been abandoned. He was tiny, filthy, and obviously needed help, so we took him in—hoping Pumpkin would have a friend, though Pumpkin and Coffee didn't exactly become best buds.<br><br>Coffee needed extra care: he was always getting sick. I remember worrying he wouldn't make it in those early days after we brought him home. He had convulsions several times—I was heartbroken watching him struggle. Once, when we moved to a new house that didn't yet have railings on the rooftop, he fell off but, thankfully, landed on a neighbor's roof below. It was a terrifying experience, but he survived.<br><br>Sadly, after three years with us, Coffee passed away. I wasn't home when he died—I was working—and I've never forgiven myself for not being there. He spent his last days puking blood, and it was clear he couldn't eat anymore. I wish I had been there with him. Even now, I miss him every day 🥺.<br><br>Coffee's passing was bittersweet. For a while, I hesitated to look for work outside our province because I worried about leaving my dogs behind. But the day he died felt like his way of telling me, “Go live your life—I'll be okay.” That became my motivation to move forward and apply for jobs in Manila. Everything I do right now is dedicated to him—he was more than just a dog to me, especially as an only child. My dogs have always been the ones I could pour my heart out to, without fear of judgment.<br><br>So, that's me in a nutshell: a bit about my professional life, but mostly about my four-legged family. I know it's heavy on the dog stories, but what can I say? They're my world. Thanks for listening to my “TED Talk!”<br><br>**Oh, and one more thing: I love coffee—oat milk lattes are my go-to.**",
+        "content": "**Nullam mollis tempor odio, et tincidunt enim. Phasellus non dui in leo egestas faucibus. Sed ac nulla nisl.**<br><br>Aenean fermentum elementum dolor, facilisis facilisis lacus imperdiet nec. Maecenas at magna faucibus, gravida dolor eget, condimentum nisl. Curabitur ultrices ex quis tortor tempus molestie. Nulla fermentum at orci vel egestas. Vestibulum et facilisis urna, a scelerisque arcu. Etiam in nibh vel eros ultricies pharetra. Proin non arcu ac nunc mollis imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
+        "image_url": "https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "created_at": "2025-06-05T15:02:45.736Z",
         "published": true
     },
     {
         "id": 3,
-        "title": "What is this for?",
-        "slug": "what-is-this-for",
+        "title": "The Rise of AI: Opportunities and Challenges Ahead",
+        "slug": "the-rise-of-ai-opportunities-and-challenges-ahead",
         "short_url": "C7IFx",
-        "content": "This is my first project from the Udemy course \"Python Django - The Practical Guide.\"<br><br>**Note:** This project does not include database integration. Instead, JSON files are used to simulate a database.",
+        "content": "**Pellentesque nunc mi, convallis id convallis vel, molestie sit amet massa. Curabitur velit lectus, vehicula id mattis sed, luctus a nisl.**<br><br>Proin mattis dui finibus justo fringilla, ut blandit velit rutrum. Integer ut purus et eros luctus semper non ac sapien. Phasellus varius mauris vitae dolor luctus mollis. Vestibulum ac pretium neque, ut fermentum quam. Aenean et purus augue. Nunc fringilla, metus eget placerat aliquet, orci nibh porttitor justo, ut commodo nisi quam non dolor.<br><br>Cras posuere, lorem vitae commodo dictum, odio quam suscipit ex, id pellentesque velit dui quis orci. Praesent aliquet enim id risus semper tempor. Donec vitae blandit lectus. Aenean pretium, felis eget mattis faucibus, neque lectus pretium tortor, quis convallis lacus risus a lacus. Maecenas eget est nec nisi tincidunt bibendum. Aliquam id mauris tortor.",
+        "image_url": "https://images.unsplash.com/photo-1677691824188-3e266886cb27?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "created_at": "2025-06-05T15:03:03.531Z",
         "published": true
     },
     {
         "id": 4,
-        "title": "Lorem ipsum",
-        "slug": "lorem-ipsum",
+        "title": "Top 10 Tools Every Developer Should Know in 2025",
+        "slug": "top-10-tools-every-developer-should-know-in-2025",
         "short_url": "IS9w8",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada ullamcorper turpis sit amet porta. Ut eget ante mattis, posuere mauris at, tempus enim. Aenean sapien est, porta in diam id, vehicula tristique massa. Pellentesque nulla erat, sollicitudin eu ipsum a, pharetra tempor quam. Nulla sed auctor sem. Fusce id semper massa. Suspendisse tempor mi sed rhoncus laoreet. Donec malesuada placerat massa, eget euismod tortor volutpat eu.",
+        "content": "**Donec nec metus a purus sollicitudin vehicula ac nec lectus. Nunc in mattis erat, sed volutpat eros.**<br><br>Nullam faucibus odio sed leo fringilla commodo. Duis id ultricies turpis. Pellentesque at luctus neque, eget sagittis velit. Vivamus dignissim in ipsum ac vestibulum. Donec ac nibh maximus, ornare mauris a, blandit tortor. Maecenas lobortis diam dapibus hendrerit aliquam. Integer quis mauris turpis. Ut iaculis ligula eleifend, gravida arcu sit amet, suscipit libero. Mauris tincidunt orci at lacus luctus malesuada. Proin at interdum nunc. Proin consectetur in enim id iaculis. Mauris hendrerit scelerisque est, vel accumsan ex tristique in. Nunc ac tincidunt orci. In ultrices maximus eros ac consequat.",
+        "image_url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "created_at": "2025-06-05T15:04:30.333Z",
+        "published": true
+    },
+    {
+        "id": 5,
+        "title": "From Code to Cloud: Navigating Modern Deployment Strategies",
+        "slug": "from-code-to-cloud-navigating-modern-deployment-strategies",
+        "short_url": "D7OHc",
+        "content": "Vestibulum rhoncus posuere faucibus. Sed imperdiet neque sit amet tincidunt sollicitudin. Pellentesque nisl ante, iaculis non est ut, condimentum sagittis velit. Nulla facilisis ullamcorper bibendum. Nam ut tellus vel tellus tempus sagittis at sed erat. Curabitur in rhoncus nibh. Praesent congue commodo mi eu viverra.",
+        "image_url": "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "created_at": "2025-06-07T21:13:00.797Z",
+        "published": true
+    },
+    {
+        "id": 6,
+        "title": "Cybersecurity in the Digital Age: Are You Prepared?",
+        "slug": "cybersecurity-in-the-digital-age-are-you-prepared",
+        "short_url": "YdP2p",
+        "content": "Pellentesque accumsan ut leo a porttitor. Aliquam bibendum quam vitae arcu rhoncus, hendrerit egestas mauris suscipit. Proin venenatis non eros et vestibulum. Nulla eget consectetur orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vehicula tempus est sed porta. Vestibulum tortor est, tempus sit amet nibh vel, ultrices auctor odio. Curabitur ut fermentum sem. Vestibulum vel urna sollicitudin, dapibus odio iaculis, scelerisque odio. Mauris venenatis congue ex in pretium. Integer ut nibh eu justo luctus euismod. Nam iaculis nisi a dui ullamcorper consectetur. Nulla volutpat tellus ut mi euismod, vitae placerat odio euismod.",
+        "image_url": "https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "created_at": "2025-06-07T21:15:07.032Z",
         "published": true
     }
 ]

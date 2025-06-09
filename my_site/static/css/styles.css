@@ -1,6 +1,13 @@
-html *
-{
+html * {
     font-family: Roboto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 .aEx2T {
@@ -11,8 +18,30 @@ html *
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
 }
 
+.bUs59 a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.bUs59 a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.bUs59 nav-link active {
+    font-weight: bold;
+}
+
 .fSG8k {
     border: thick solid rgba(255, 255, 255, .5);
+}
+
+.h2Oi9 {
+    position: relative;
+    text-align: center;
+}
+
+.I2g9P p {
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .Lak2A {
@@ -29,11 +58,56 @@ html *
     background-color: rgba(247, 247, 249, 1);
 }
 
+.u9Fi9:hover {
+    font-weight: bolder;
+}
+
+.uC0S9 {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
 .Ufm6G {
     filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 1));
 }
 
 .Ufm6G a {
-  color: rgba(255, 255, 255, 1);
-  text-decoration: underline;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+}
+
+.VoMy8 p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.xByA7 {
+    color: rgba(255, 255, 255, 1);
+    background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-4377.jpg");
+    background-size: cover;
+}
+
+.zq2Ns {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.tN88c {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+}
+
+.tN88c mark {
+    color: whitesmoke;
+    background-color: #FE4F00;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-style: italic;
+    filter: drop-shadow(1vh 1vh 0 rgba(0, 0, 0, 1));
 }
