@@ -76,4 +76,12 @@ def view_all_posts(request):
         "posts": posts_by_page,
     }
 
-    return render(request, "posts.html", context=context)
+    return render(request, "about-me.html", context=context)
+
+def about_me(request):
+    context = {
+        "user": user,
+        "recent_posts": posts[-INDEX_POSTS_LIMIT:]
+    }
+
+    return render(request, "about-me.html", context=context)
