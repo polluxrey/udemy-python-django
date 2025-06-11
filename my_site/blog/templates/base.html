@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+{% with request.resolver_match.url_name as url_name %}
 <head>
     <title>{% block title %}My Blog{% endblock %}</title>
     <meta charset="UTF-8">
@@ -9,9 +10,11 @@
     <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "bootstrap-icons/bootstrap-icons.css" %}">
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    {% if url_name == "MDlmY" %}
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    {% endif %}
 </head>
 <body>
-    {% with request.resolver_match.url_name as url_name %}
     <div class="container-fluid">
             <div class="row{% if url_name == "MDlmY" %} min-vh-100{% endif %}">
                 {% if url_name == "MDlmY" %}
@@ -38,8 +41,14 @@
                 {% else %}
                 {% endif %}
             </div>
-        {% endwith %}
+        
     </div>
     <script src="{% static "bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+    {% if url_name == "MDlmY" %}
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="{% static "js/initialize_quill.js" %}"></script>
+    {% endif %}
+
 </body>
+{% endwith %}
 </html>

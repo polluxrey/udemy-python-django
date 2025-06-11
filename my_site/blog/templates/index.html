@@ -9,6 +9,13 @@
 {% block content %}
   <div class="container-fluid h-100">
     <div class="row text-center justify-content-center p-3 p-sm-5 s62bL">
+      {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == "success" %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
       <h2><b>DevBlog</b> - A Blog Made For Developers</h2>
       <p class="fs-5">Subscribe and get my latest blog post in your inbox.</p>
       <form class="d-flex justify-content-center">
@@ -17,6 +24,7 @@
       </form>
     </div>
     <div class="row p-3 p-sm-4">
+      <p class="h4 text-center fw-bolder">Latest Posts</p>
       {% for post in recent_posts reversed %}
         <a href="{% url 'rcOrH' post.slug %}">
           <div class="card mb-3 p-0">
@@ -40,4 +48,5 @@
       {% endfor %}
     </div>
   </div>
+  {% include 'new_post_modal.html' %}
 {% endblock %}

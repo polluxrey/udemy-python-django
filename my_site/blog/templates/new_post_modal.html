@@ -1,0 +1,37 @@
+<!-- Modal -->
+<div class="modal fade" id="writeNewPostModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Write New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="alert alert-danger d-none" role="alert" id="titleError">Title is required!</div>
+        <div class="alert alert-danger d-none" role="alert" id="contentError">Content is required!</div>
+        <form id="newPostForm" action="{% url 'MDlmY' %}" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" />
+          </div>
+          <div class="mb-3">
+            <label for="image_url" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="image_url" name="image_url" />
+          </div>
+          <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <div id="editor"></div>
+            <input type="hidden" name="content" id="content-input" />
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancelBtn">Reset</button>
+        <button type="submit" form="newPostForm" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

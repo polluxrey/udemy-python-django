@@ -52,6 +52,14 @@ a:active {
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
 }
 
+.o3Nn5 {
+    border-color: #D3D3D3;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px gray;
+}
+
 .r7Doe {
     color: rgba(255, 255, 255, 1);
     background-image: url("https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-4377.jpg");

@@ -9,6 +9,7 @@
 {% block content %}
   <div class="container p-0">
     <div class="container p-3">
+      <p class="h2 text-center fw-bolder">Latest Posts</p>
       {% for post in posts %}
         <a href="{% url 'rcOrH' post.slug %}">
           <div class="card mb-3 p-0">
