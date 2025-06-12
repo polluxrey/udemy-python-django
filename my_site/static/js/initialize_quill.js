@@ -7,14 +7,22 @@ document.getElementById('newPostForm').addEventListener('submit', function (e) {
 
     // Clear previous errors
     document.getElementById('titleError').classList.add('d-none');
+    document.getElementById('urlError').classList.add('d-none');
     document.getElementById('contentError').classList.add('d-none');
 
     const titleInput = document.getElementById('title');
     const title = titleInput.value.trim();
+    const urlInput = document.getElementById('image_url');
+    const image_url = urlInput.value.trim();
     const content = quill.root.innerHTML.trim();
 
     if (!title) {
         document.getElementById('titleError').classList.remove('d-none');
+        return;
+    }
+
+    if (!image_url) {
+        document.getElementById('urlError').classList.remove('d-none');
         return;
     }
 

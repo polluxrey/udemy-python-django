@@ -9,6 +9,7 @@
 
       <div class="modal-body">
         <div class="alert alert-danger d-none" role="alert" id="titleError">Title is required!</div>
+        <div class="alert alert-danger d-none" role="alert" id="urlError">Image URL is required!</div>
         <div class="alert alert-danger d-none" role="alert" id="contentError">Content is required!</div>
         <form id="newPostForm" action="{% url 'MDlmY' %}" method="POST">
           {% csrf_token %}
