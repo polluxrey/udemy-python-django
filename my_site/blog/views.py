@@ -111,15 +111,23 @@ def view_post(request, slug):
     if post is None:
         return HttpResponseNotFound("Article not found!")
 
-    if (slug != normalized_slug) and post:
-        return redirect(request.path.lower(), permanent=True)
-
     context = {
         "user": user,
         "post": post,
     }
 
     return render(request, "post.html", context=context)
+
+def view_post_short_url(request, short_url):
+    post = None
+
+    for p in temp_posts:
+        if short_url == p["short_url"]:
+            return redirect('rcOrH', slug=p["slug"])
+            
+
+    if post is None:
+        return HttpResponseNotFound("Article not found!")
 
 
 def view_all_posts(request):
