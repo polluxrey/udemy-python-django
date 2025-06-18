@@ -1,0 +1,160 @@
+:root {
+    /* Main color */
+    --bs-alabaster: #e5e3d6;
+    /* Secondary color */
+    --bs-bistre: #342113;
+    /* White background */
+    --bs-seasalt: #f8f8f8;
+    /* Gray text */
+    --bs-silver: #a2a2a2;
+    /* Dark gray text */
+    --bs-davys-gray: #555555;
+    /* 'Want to read' button */
+    --bs-mint: #63a976;
+    /* Hyperlink */
+    --bs-carribean-current: #29605b;
+    /* Gray icon */
+    --bs-dim-gray: #707070;
+    /* Stars */
+    --bs-safety-orange: #E87400;
+    --bs-body-font-family: 'Lato';
+    --bs-header-font-family: 'Merriweather';
+}
+
+.btn-mint {
+    color: white;
+    background-color: var(--bs-mint);
+    transition: background-color 0.3s ease;
+    border: solid var(--bs-mint) !important;
+}
+
+.btn-mint:hover,
+.btn-mint:active {
+    color: white !important;
+    background-color: #7ab68b !important;
+    border: solid var(--bs-mint) !important;
+}
+
+.btn-mint-inv {
+    color: var(--bs-mint);
+    background-color: var(--bs-seasalt);
+    border: solid var(--bs-mint);
+    transition: background-color 0.3s ease;
+}
+
+.btn-mint-inv:hover,
+.btn-mint-inv:active {
+    color: var(--bs-mint) !important;
+    background-color: #f2f2f2 !important;
+    border: solid var(--bs-mint) !important;
+}
+
+.btn-black {
+    color: white;
+    background-color: black;
+    transition: background-color 0.3s ease;
+    border: solid black;
+}
+
+.btn-black:hover,
+.btn-black:active {
+    color: white !important;
+    background-color: #333333 !important;
+    border: solid black !important;
+}
+
+.text-carribean-current {
+    color: var(--bs-carribean-current);
+}
+
+.text-default {
+    font-family: 'Merriweather';
+}
+
+.navbar-brand {
+    font-family: 'Lato';
+    color: var(--bs-bistre);
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: var(--bs-bistre);
+}
+
+.star-rating i {
+    color: #d3d3d3;
+    /* Light gray for empty stars */
+}
+
+.star-rating .full-star {
+    color: var(--bs-safety-orange);
+}
+
+.star-rating .half-star {
+    background: linear-gradient(to right, var(--bs-safety-orange) 50%, var(--bs-dim-gray) 50%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.star-rating-cnt:hover {
+    background-color: #eeeeee;
+    transition: 0.5s ease;
+}
+
+.img-book {
+    max-width: 100%;
+    max-height: 350px;
+    aspect-ratio: 6 / 9;
+    object-fit: contain;
+}
+
+.img-book-thumb {
+    width: 100%;
+    max-height: 150px;
+    aspect-ratio: 6 / 9;
+    object-fit: contain;
+}
+
+.text-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.genre-badge {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--bs-mint);
+    text-decoration-thickness: 3px;
+    text-underline-position: under;
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    background-color: var(--bs-seasalt);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--bs-header-font-family);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav,
+footer {
+    color: var(--bs-bistre);
+    background-color: var(--bs-alabaster);
+}
+
+nav a,
+nav a:hover {
+    color: inherit;
+}

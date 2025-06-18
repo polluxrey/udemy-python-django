@@ -1,0 +1,41 @@
+:root {
+    /* Main color */
+    --bs-alabaster: #e5e3d6;
+    /* White background */
+    --bs-seasalt: #f8f8f8;
+    /* Gray text */
+    --bs-silver: #a2a2a2;
+    /* Dark gray text */
+    --bs-davys-gray: #555555;
+    /* 'Want to read' button */
+    --bs-mint: #63a976;
+    /* Hyperlink */
+    --bs-carribean-current: #29605b;
+    /* Gray icon */
+    --bs-dim-gray: #707070;
+    --bs-body-font-family: 'Lato';
+    --bs-header-font-family: 'Merriweather';
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--bs-header-font-family);
+}
+
+a,
+a:hover {
+    color: var(--bs-carribean-current);
+}
+
+a:hover {
+    text-decoration: underline;
+}
