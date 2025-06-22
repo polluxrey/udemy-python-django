@@ -82,7 +82,7 @@
 }
 
 .star-rating i {
-    color: #d3d3d3;
+    color: var(--bs-dim-gray);
     /* Light gray for empty stars */
 }
 
@@ -90,8 +90,8 @@
     color: var(--bs-safety-orange);
 }
 
-.star-rating .half-star {
-    background: linear-gradient(to right, var(--bs-safety-orange) 50%, var(--bs-dim-gray) 50%);
+.star-rating .partial-star {
+    background: linear-gradient(to right, var(--bs-safety-orange) var(--fill-percentage), var(--bs-dim-gray) var(--fill-percentage));
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -157,4 +157,10 @@ footer {
 nav a,
 nav a:hover {
     color: inherit;
+}
+
+#about-author a {
+    color: black;
+    text-decoration: underline;
+    text-underline-position: under;
 }

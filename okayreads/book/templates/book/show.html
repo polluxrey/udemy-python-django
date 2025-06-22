@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load humanize %}
+{% load martortags %}
 
 {% block title %}
-  The Hunger Games -
-{% endblock %}
-
-{% block custom_stylesheets %}
-  <link rel="stylesheet" href="{% static 'css/book.css' %}" />
+  {{ book.title }} -
 {% endblock %}
 
 {% block content %}
@@ -30,71 +28,48 @@
           </div>
         </div>
         <div class="col-8 col-sm-9 d-flex flex-column">
-          <h1 class="fw-bold mb-1">The Hunger Games</h1>
-          <h4 class="mb-2">Suzanne Collins</h4>
+          <h1 class="fw-bold mb-1">{{ book.title }}</h1>
+          {% for author in book.authors.all %}
+            <h4 class="mb-2">{{ author }}{% if not forloop.last %}, {% endif %}</h4>
+          {% endfor %}
           <div class="d-inline-flex flex-row align-items-center align-self-start star-rating-cnt rounded-3 gap-3 mb-2 p-2">
-            <div class="star-rating fs-3">
-              <i class="bi bi-star-fill full-star"></i>
-              <i class="bi bi-star-fill full-star"></i>
-              <i class="bi bi-star-fill full-star"></i>
-              <i class="bi bi-star-fill full-star"></i>
-              <i class="bi bi-star-fill half-star"></i>
-            </div>
-            <h3 class="fw-bold">4.35</h3>
-            <span class="text-muted">9,511,543 ratings</span>
+            <div id="star-rating" class="star-rating fs-5 me-2" data-rating="{{ book.ave_rating }}"></div>
+            <h3 class="fw-bold">{{ book.ave_rating }}</h3>
+            <span class="text-muted">{{ book.raters|intcomma }} ratings</span>
           </div>
-          <div class="d-flex text-justify fs-5">
-            <p>
-              Winning means fame and fortune. Losing means certain death. The Hunger Games have begun....<br /><br />
-
-              In the ruins of a place once known as North America lies the nation of Panem, a shining Capitol surrounded by twelve outlying districts. The Capitol is harsh and cruel and keeps the districts in line by forcing them all to send one boy and one girl between the ages of twelve and eighteen to participate in the annual Hunger Games, a fight to the death on live TV.<br /><br />
-
-              Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to dead before-and survival, for her, is second nature. Without really meaning to, she becomes a contender. But if she is to win, she will have to start making choices that weigh survival against humanity and life against love.
-            </p>
-          </div>
+          <div class="d-flex flex-column text-justify fs-5">{{ book.description|safe_markdown }}</div>
           <div class="d-flex flex-wrap gap-2">
             <span class="text-muted">Genres</span>
-            <span class="genre-badge">Young Adult</span>
-            <span class="genre-badge">Dystopia</span>
-            <span class="genre-badge">Fiction</span>
-            <span class="genre-badge">Fantasy</span>
-            <span class="genre-badge">Science Fiction</span>
-            <span class="genre-badge">Romance</span>
-            <span class="genre-badge">Adventure</span>
-            <span class="genre-badge">Audiobook</span>
-            <span class="genre-badge">Book Club</span>
-            <span class="genre-badge">Teen</span>
+            {% for genre in book.genres.all %}
+              <span class="genre-badge">{{ genre }}</span>
+            {% endfor %}
           </div>
           <hr />
-          <div class="d-flex flex-column">
+          <div id="about-author" class="d-flex flex-column">
             <h5 class="fw-bold">About the author</h5>
             <div>
-              <div class="row my-3">
+              <div class="row mt-3">
                 <div class="col-auto">
                   <img class="rounded-circle" src="{% static 'images/suzanne-collins.jpeg' %}" style="max-width: 100px;" />
                 </div>
                 <div class="col d-flex flex-column justify-content-center align-items-start">
-                  <h5 class="fw-bold">Suzanne Collins</h5>
+                  <h5 class="fw-bold">{{ book.authors.first }}</h5>
                   <button type="button" class="btn btn-black rounded-pill px-4">Follow</button>
                 </div>
               </div>
             </div>
-            <div class="d-flex text-justify w-75">
-              <p>
-                Since 1991, Suzanne Collins has been busy writing for children&#39;s television. She has worked on the staffs of several Nickelodeon shows, including the Emmy-nominated hit Clarissa Explains it All and The Mystery Files of Shelby Woo. For preschool viewers, she penned multiple stories for the Emmy-nominated Little Bear and Oswald. She also co-wrote the critically acclaimed Rankin/Bass Christmas special, Santa, Baby! Most recently she was the Head Writer for Scholastic Entertainment&#39;s Clifford&#39;s Puppy Days.<br /><br />
-
-                While working on a Kids WB show called Generation O! she met children&#39;s author James Proimos, who talked her into giving children&#39;s books a try.<br /><br />
-
-                Thinking one day about Alice in Wonderland, she was struck by how pastoral the setting must seem to kids who, like her own, lived in urban surroundings. In New York City, you&#39;re much more likely to fall down a manhole than a rabbit hole and, if you do, you&#39;re not going to find a tea party. What you might find...? Well, that&#39;s the story of Gregor the Overlander, the first book in her five-part series, The Underland Chronicles. Suzanne also has a rhyming picture book illustrated by Mike Lester entitled When Charlie McButton Lost Power.<br /><br />
-
-                She currently lives in Connecticut with her family and a pair of feral kittens they adopted from their backyard.<br /><br />
-
-                The books she is most successful for in teenage eyes are The Hunger Games, Catching Fire and Mockingjay. These books have won several awards, including the GA Peach Award.
-              </p>
+            <div class="d-flex flex-column text-justify w-75">
+              {% with first_author=book.authors.first %}
+                <p>{{ first_author.bio|safe_markdown }}</p>
+              {% endwith %}
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block custom_scripts %}
+  <script src="{% static 'js/star_rating.js' %}"></script>
 {% endblock %}

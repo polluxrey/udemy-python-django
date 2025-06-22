@@ -1,0 +1,158 @@
+[
+    {
+        "name": "Best Books Ever",
+        "description": "The best books ever, as voted on by the general Goodreads community.",
+        "books": [
+            {
+                "title": "The Hunger Games",
+                "score": 4160391,
+                "voters": 42306
+            },
+            {
+                "title": "Pride and Prejudice",
+                "score": 2877524,
+                "voters": 29498
+            },
+            {
+                "title": "To Kill a Mockingbird",
+                "score": 2549555,
+                "voters": 26035
+            },
+            {
+                "title": "Harry Potter and the Order of the Phoenix",
+                "score": 2043117,
+                "voters": 20785
+            },
+            {
+                "title": "The Book Thief",
+                "score": 1926585,
+                "voters": 19792
+            },
+            {
+                "title": "Twilight",
+                "score": 1733803,
+                "voters": 17672
+            },
+            {
+                "title": "Animal Farm",
+                "score": 1657636,
+                "voters": 17159
+            },
+            {
+                "title": "J.R.R. Tolkien 4-Book Boxed Set: The Hobbit and The Lord of the Rings",
+                "score": 1609450,
+                "voters": 16679
+            },
+            {
+                "title": "The Chronicles of Narnia",
+                "score": 1505948,
+                "voters": 15689
+            },
+            {
+                "title": "The Fault in Our Stars",
+                "score": 1394086,
+                "voters": 14426
+            },
+            {
+                "title": "The Picture of Dorian Gray",
+                "score": 1326630,
+                "voters": 13839
+            },
+            {
+                "title": "The Giving Tree",
+                "score": 1222157,
+                "voters": 12649
+            },
+            {
+                "title": "Wuthering Heights",
+                "score": 1219890,
+                "voters": 12726
+            },
+            {
+                "title": "The Lightning Thief",
+                "score": 1205898,
+                "voters": 12602
+            },
+            {
+                "title": "Gone with the Wind",
+                "score": 1184223,
+                "voters": 12212
+            },
+            {
+                "title": "The Perks of Being a Wallflower",
+                "score": 1161814,
+                "voters": 12089
+            },
+            {
+                "title": "The Little Prince",
+                "score": 1127935,
+                "voters": 11882
+            },
+            {
+                "title": "Jane Eyre",
+                "score": 1119347,
+                "voters": 11760
+            },
+            {
+                "title": "The Great Gatsby",
+                "score": 1089892,
+                "voters": 11596
+            },
+            {
+                "title": "Crime and Punishment",
+                "score": 1026871,
+                "voters": 10685
+            },
+            {
+                "title": "The da Vinci Code",
+                "score": 1012834,
+                "voters": 10644
+            },
+            {
+                "title": "Alice's Adventures in Wonderland / Through the Looking-Glass",
+                "score": 992912,
+                "voters": 10463
+            },
+            {
+                "title": "Divergent",
+                "score": 987471,
+                "voters": 10350
+            },
+            {
+                "title": "Memoirs of a Geisha",
+                "score": 958354,
+                "voters": 9982
+            },
+            {
+                "title": "Les Misérables",
+                "score": 951305,
+                "voters": 9987
+            },
+            {
+                "title": "The Alchemist",
+                "score": 942161,
+                "voters": 9839
+            },
+            {
+                "title": "Anne of Green Gables",
+                "score": 934499,
+                "voters": 9827
+            },
+            {
+                "title": "Lord of the Flies",
+                "score": 926169,
+                "voters": 9833
+            },
+            {
+                "title": "Romeo and Juliet",
+                "score": 909253,
+                "voters": 9733
+            },
+            {
+                "title": "The Hitchhiker's Guide to the Galaxy",
+                "score": 861703,
+                "voters": 9001
+            }
+        ]
+    }
+]
