@@ -36,7 +36,7 @@ class Book(models.Model):
                                          MinValueValidator(1.00), MaxValueValidator(5.00)])
     raters = models.PositiveIntegerField(default=0)
     slug = AutoSlugField(populate_from='title',
-                         unique=True, always_update=False)
+                         unique=True, always_update=False, db_index=True)
 
     def __str__(self):
         return f"{self.title}"
