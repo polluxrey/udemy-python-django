@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load humanize %}
+{% load martortags %}
+{% load humanize_number %}
 
 {% block title %}
   Best Books Ever -
@@ -9,66 +12,63 @@
 {% block content %}
   <div class="d-flex flex-column" style="padding-left:10vw; padding-right:10vw;">
     <a href="#"><h3 class="fw-bold text-carribean-current mb-2">Listopia</h3></a>
-    <h1 class="fw-bold mb-4">Best Books Ever</h1>
-    <p class="fs-5">
-      The best books ever, as voted on by the general Goodreads community.<br /><br />Note to librarians: do not edit this list's description.
-    </p>
-    <div class="container-fluid border-top border-bottom py-2">
-      <div class="row d-flex flex-nowrap">
-        <div class="col-1 d-flex align-items-center me-3">
-          <span class="display-1">1</span>
-        </div>
-        <div class="col-2">
-          <img class="img-book-thumb" src="{% static 'images/hunger-games.jpg' %}" />
-        </div>
-        <div class="col-4">
-          <h3 class="fw-bold">The Hunger Games</h3>
-          <span>by</span> <span class="text-default d-inline fs-5 m-0">Suzanne Collins</span>
-          <div class="d-flex flex-row align-items-center">
-            <div id="book-rating" class="star-rating fs-5 me-2" data-rating="{{ book.rating }}">
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-              <i class="bi bi-star-fill"></i>
-            </div>
-            <span class="d-inline">4.35 avg rating</span>
+    <h1 class="fw-bold mb-4">{{ book_list.name }}</h1>
+    <div class="d-flex flex-column text-justify fs-5">{{ book_list.description|safe_markdown }}</div>
+    {% for entry in entries %}
+      <div class="container-fluid border-top border-bottom py-2">
+        <div class="row d-flex flex-nowrap">
+          <div class="col-1 d-flex align-items-center me-3">
+            <span class="display-1">{{ forloop.counter }}</span>
           </div>
-
-          <span class="badge bg-secondary">Young Adult</span>
-          <span class="badge bg-secondary">Dystopia</span>
-          <span class="badge bg-secondary">Fiction</span>
-          <span class="badge bg-secondary">Fantasy</span>
-          <span class="badge bg-secondary">Science Fiction</span>
-        </div>
-        <div class="col-3">
-          <div class="card text-center">
-            <div class="card-header">
-              <span class="fs-5 fw-bold m-0">Score</span>
+          <div class="col-2">
+            <img class="img-book-thumb" src="{% static 'images/books/'|add:entry.book.slug|add:'.jpg' %}" />
+          </div>
+          <div class="col-4">
+            <h3 class="fw-bold"><a href="{% url 'show_book' entry.book.slug %}">{{ entry.book.title }}</a></h3>
+            <span>by</span> {% for author in entry.book.authors.all %}
+              <span class="text-default d-inline fs-5 m-0">{{ author }}{% if not forloop.last %}, {% endif %}</span>
+            {% endfor %}
+            <div class="d-flex flex-row align-items-center">
+              <div class="star-rating fs-5 me-2" data-rating="{{ entry.book.ave_rating }}"></div>
+              <span class="d-inline">{{ entry.book.ave_rating }} avg rating</span>
             </div>
-            <div class="card-body d-flex flex-column p-1">
-              <span class="card-text fs-1 fw-bold">4.1M</span>
-              <span>Voted by 42,269 people</span>
+            {% for genre in entry.book.genres.all %}
+              <span class="badge bg-mint">{{ genre }}</span>
+            {% endfor %}
+          </div>
+          <div class="col-3">
+            <div class="card text-center">
+              <div class="card-header">
+                <span class="fs-5 fw-bold m-0">Score</span>
+              </div>
+              <div class="card-body d-flex flex-column p-1">
+                <span class="card-text fs-1 fw-bold">{{ entry.score|humanize_number }}</span>
+                <span>Voted by {{ entry.voters|intcomma }} people</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-2 d-flex justify-content-end">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle text-wrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">Want to Read</button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a class="dropdown-item" href="#">Want to Read</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Another action</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
+          <div class="col-2 d-flex justify-content-end">
+            <div class="dropdown">
+              <button class="btn btn-mint dropdown-toggle text-wrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown">Want to Read</button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                  <a class="dropdown-item" href="#">Want to Read</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    {% endfor %}
   </div>
+{% endblock %}
+
+{% block custom_scripts %}
+  <script src="{% static 'js/star_rating_multiple.js' %}"></script>
 {% endblock %}

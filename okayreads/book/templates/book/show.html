@@ -14,14 +14,14 @@
       <div class="row d-flex flex-nowrap">
         <div class="col-4 col-sm-3 text-center">
           <div class="wrapper sticky-top" style="top: 100px;">
-            <img class="img-book rounded-end-3 mb-4" src="{% static 'images/hunger-games.jpg' %}" />
+            <img class="img-book rounded-end-3 mb-4" src="{% static 'images/books/'|add:book.slug|add:'.jpg' %}" />
             <div class="d-flex flex-column gap-3">
               <div class="btn-group btn-group-lg" role="group">
                 <button type="button col-8" class="btn btn-mint rounded-start-pill w-75">Want to Read</button>
                 <button type="button col-4" class="btn btn-mint rounded-end-pill"><i class="bi bi-caret-down-fill"></i></button>
               </div>
               <div class="btn-group btn-group-lg" role="group">
-                <button type="button col-8" class="btn btn-mint-inv rounded-start-pill w-75">Shop this series</button>
+                <button type="button col-8" class="btn btn-mint-inv rounded-start-pill w-75">Shop this book</button>
                 <button type="button col-4" class="btn btn-mint-inv rounded-end-pill"><i class="bi bi-caret-down-fill"></i></button>
               </div>
             </div>
@@ -45,25 +45,25 @@
             {% endfor %}
           </div>
           <hr />
-          <div id="about-author" class="d-flex flex-column">
-            <h5 class="fw-bold">About the author</h5>
-            <div>
-              <div class="row mt-3">
-                <div class="col-auto">
-                  <img class="rounded-circle" src="{% static 'images/suzanne-collins.jpeg' %}" style="max-width: 100px;" />
-                </div>
-                <div class="col d-flex flex-column justify-content-center align-items-start">
-                  <h5 class="fw-bold">{{ book.authors.first }}</h5>
-                  <button type="button" class="btn btn-black rounded-pill px-4">Follow</button>
+          {% with first_author=book.authors.first %}
+            <div id="about-author" class="d-flex flex-column">
+              <h5 class="fw-bold">About the author</h5>
+              <div>
+                <div class="row mt-3">
+                  <div class="col-auto">
+                    <img class="rounded-circle" src="{% static 'images/authors/'|add:first_author.slug|add:'.jpg' %}" style="width: 100px; height: 100px; object-fit:cover;" />
+                  </div>
+                  <div class="col d-flex flex-column justify-content-center align-items-start">
+                    <h5 class="fw-bold mb-1">{{ first_author.name }}</h5>
+                    <button type="button" class="btn btn-black rounded-pill px-4">Follow</button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="d-flex flex-column text-justify w-75">
-              {% with first_author=book.authors.first %}
+              <div class="d-flex flex-column text-justify w-75">
                 <p>{{ first_author.bio|safe_markdown }}</p>
-              {% endwith %}
+              </div>
             </div>
-          </div>
+          {% endwith %}
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rating = parseFloat(ratingContainer.dataset.rating);
 
     const fullStars = Math.floor(rating);
-    const partialStar = rating - fullStars
+    const partialStar = rating - fullStars;
     const totalStars = 5;
 
     ratingContainer.innerHTML = '';
