@@ -6,11 +6,26 @@ from autoslug import AutoSlugField
 # Create your models here.
 
 
+class Address(models.Model):
+    street = models.CharField(max_length=80)
+    postal_code = models.CharField(max_length=5)
+    city = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.street}, {self.city}"
+
+    class Meta:
+        verbose_name_plural = "Addresses"
+
+
 class Author(models.Model):
     name = models.CharField(max_length=255)
     bio = MartorField(blank=True)
     slug = AutoSlugField(populate_from='name',
                          unique=True, always_update=False, blank=True)
+
+    address = models.OneToOneField(
+        Address, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.name
