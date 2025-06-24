@@ -6,6 +6,17 @@ from autoslug import AutoSlugField
 # Create your models here.
 
 
+class Country(models.Model):
+    name = models.CharField(max_length=80, unique=True)
+    code = models.CharField(max_length=2, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Countries"
+
+
 class Address(models.Model):
     street = models.CharField(max_length=80)
     postal_code = models.CharField(max_length=5)
@@ -52,6 +63,9 @@ class Book(models.Model):
     raters = models.PositiveIntegerField(default=0)
     slug = AutoSlugField(populate_from='title',
                          unique=True, always_update=False, db_index=True)
+
+    availability_countries = models.ManyToManyField(
+        Country, related_name="books")
 
     def __str__(self):
         return f"{self.title}"
