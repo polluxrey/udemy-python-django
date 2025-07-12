@@ -1,13 +1,14 @@
 {% load static %}
-{% load markdown_extras %}
+{% load martortags %}
 
 <div class="d-flex flex-column align-items-center h-100">
-  <h1 class="text-center fw-bolder Lak2A">{{ user.nickname }}'s Blog</h1>
+  <h1 class="text-center fw-bolder Lak2A">{{ blog_settings.blog_name }}</h1>
   <img src="{% static 'images/profile_pic.png' %}" class="w-50 rounded-circle my-3 fSG8k" />
-  <div class="d-flex text-center my-2 Ufm6G">{{ user.bio|markdown|safe }}</div>
+  <div class="d-flex text-center my-2 Ufm6G">{{ blog_settings.bio|safe_markdown }}</div>
   <div class="d-flex my-3">
-    <a href="{{ user.linkedin_url }}" class="aEx2T"><i class="bi bi-linkedin h2 mx-3"></i></a>
-    <a href="{{ user.github_url }}" class="aEx2T"><i class="bi bi-github h2 mx-3"></i></a>
+    {% for social_link in blog_settings.sociallink_set.all %}
+      <a href="{{ social_link.url }}" class="aEx2T"><i class="{{ social_link.platform.icon }} h2 mx-3"></i></a>
+    {% endfor %}
   </div>
   <hr class="my-2" style="width:100%" />
   {% with url_name=request.resolver_match.url_name %}
@@ -18,7 +19,21 @@
     <h5 class="text-center fw-light"><a href="{% url 'jXl6k' %}">About Me</a></h5>
     <hr class="my-2" style="width:100%" />
   {% endwith %}
-  <div class="mt-auto mb-2">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#writeNewPostModal">Write New Post</button>
+  <div class="d-flex flex-column gap-2 mt-auto mb-2">
+    {% if user.is_authenticated %}
+      {% if perms.blog.edit_posts %}
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#writeNewPostModal">Write New Post</button>
+      {% endif %}
+      <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+    {% else %}
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    {% endif %}
   </div>
 </div>
+
+{% if not user.is_authenticated %}
+  {% include 'login_modal.html' %}
+{% endif %}
+{% if perms.blog.edit_posts %}
+  {% include 'new_post_modal.html' %}
+{% endif %}

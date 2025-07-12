@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% load static %}
-{% load markdown_extras %}
+{% load martortags %}
 
 {% block title %}
-  About Me | {{ user.nickname }}'s Blog
+  About Me | {{ blog_settings.blog_name }}
 {% endblock %}
 
 {% block content %}
@@ -15,19 +15,16 @@
         <hr class="my-2" style="width: 100%" />
         <p class="h6 Ufm6G">Connect with me on</p>
         <div class="d-flex justify-content-center gap-3">
-          <div class="d-flex flex-column">
-            <a href="{{ user.linkedin_url }}" class="aEx2T"><i class="bi bi-linkedin h2 mx-3"></i><p class="h6 fw-bold text-center Ufm6G">LinkedIn</p></a>
-          </div>
-          <div class="d-flex flex-column">
-            <a href="{{ user.github_url }}" class="aEx2T"><i class="bi bi-github h2 mx-3"></i><p class="h6 fw-bold text-center Ufm6G">GitHub</p></a>
-          </div>
+          {% for social_link in blog_settings.sociallink_set.all %}
+            <div class="d-flex flex-column">
+              <a href="{{ social_link.url }}" class="aEx2T"><i class="{{ social_link.platform.icon }} h2 mx-3"></i><p class="h6 fw-bold text-center Ufm6G">{{ social_link.platform.name }}</p></a>
+            </div>
+          {% endfor %}
         </div>
       </div>
       <div class="col-12 col-sm-8 p-3" style="max-height: 70vh;">
         <p class="h3 fw-bold text-center" style="max-height: 10%;">About Me</p>
-        <div class="container overflow-auto" style="max-height: 90%;">
-            {{ user.about_me|markdown|safe }}
-        </div>
+        <div class="container overflow-auto" style="max-height: 90%;">{{ blog_settings.about_me|safe_markdown }}</div>
       </div>
     </div>
   </div>

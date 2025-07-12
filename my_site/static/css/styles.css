@@ -41,11 +41,16 @@ a:active {
 .h2Oi9 {
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 
 .I2g9P p {
     text-align: justify;
     text-justify: inter-word;
+}
+
+.I2g9P img {
+    width: 100%;
 }
 
 .Lak2A {
@@ -90,12 +95,16 @@ a:active {
     text-decoration: underline;
 }
 
-.VoMy8 p {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+.card-body {
+    height: 27vh;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: flex;
+    flex-direction: column;
+}
+
+.VoMy8 p {
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .xByA7 {
@@ -105,6 +114,13 @@ a:active {
 }
 
 .zq2Ns {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    filter: blur(10px);
+}
+
+.uxazc {
     width: 100%;
     height: 60vh;
     object-fit: cover;

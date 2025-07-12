@@ -5,12 +5,15 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 import re
 import random
 import string
 from datetime import datetime, timezone
 import copy
+
+from blog.models import Post, BlogSettings
 
 INDEX_POSTS_LIMIT = 3
 
@@ -59,84 +62,36 @@ def slugify(text):
 # Create your views here.
 
 def index(request):
-    if request.method == "POST":
-        slug = f"{slugify(request.POST['title'].strip())}-{len(temp_posts)+1}"
-
-        short_url = generate_random_string()
-        dt_now = datetime.now(timezone.utc)
-        created_at = dt_now.isoformat()
-
-        new_post = {
-            "id": len(temp_posts) + 1,
-            "title": request.POST['title'].strip(),
-            "slug": slug,
-            "short_url": short_url,
-            "content": request.POST['content'].strip(),
-            "image_url": request.POST['image_url'].strip(),
-            "created_at": created_at,
-            "published": True
-        }
-
-        posts.append(new_post)
-
-        with open(posts_file_path, 'w') as f:
-            json.dump(posts, f, indent=4)
-
-        new_post["created_at"] = dt_now.strftime("%B %d, %Y")
-
-        temp_posts.append(new_post)
-
-        messages.success(request, "Article posted successfully!")
-
-        return redirect('MDlmY')
-
     context = {
-        "user": user,
-        "recent_posts": temp_posts[-INDEX_POSTS_LIMIT:]
+        "user": request.user,
+        "blog_settings": BlogSettings.objects.first(),
+        "recent_posts": Post.objects.all().order_by('-created_at')[:INDEX_POSTS_LIMIT]
     }
 
     return render(request, "index.html", context=context)
 
 
 def view_post(request, slug):
-    post = None
+    try:
+        post = Post.objects.get(slug=slug)
+        context = {
+            "user": request.user,
+            "blog_settings": BlogSettings.objects.first(),
+            "post": post,
+        }
 
-    normalized_slug = slug.lower()
-
-    for p in temp_posts:
-        if normalized_slug == p["slug"]:
-            post = p
-            break
-
-    if post is None:
-        return HttpResponseNotFound("Article not found!")
-
-    context = {
-        "user": user,
-        "post": post,
-    }
-
-    return render(request, "post.html", context=context)
-
-def view_post_short_url(request, short_url):
-    post = None
-
-    for p in temp_posts:
-        if short_url == p["short_url"]:
-            return redirect('rcOrH', slug=p["slug"])
-            
-
-    if post is None:
+        return render(request, "post.html", context=context)
+    except Post.DoesNotExist:
         return HttpResponseNotFound("Article not found!")
 
 
 def view_all_posts(request):
-    if len(temp_posts) == 0:
+    if Post.objects.count() == 0:
         return HttpResponseNotFound("No articles found!")
 
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(temp_posts[::-1], 3)
+    paginator = Paginator(Post.objects.all().order_by('-created_at'), 3)
 
     try:
         posts_by_page = paginator.page(page)
@@ -146,7 +101,8 @@ def view_all_posts(request):
         posts_by_page = paginator.page(paginator.num_pages)
 
     context = {
-        "user": user,
+        "user": request.user,
+        "blog_settings": BlogSettings.objects.first(),
         "posts": posts_by_page,
     }
 
@@ -155,7 +111,44 @@ def view_all_posts(request):
 
 def about_me(request):
     context = {
-        "user": user
+        "blog_settings": BlogSettings.objects.first()
     }
 
     return render(request, "about-me.html", context=context)
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+
+        print(username)
+        print("hello")
+
+        if user is not None:
+            login(request, user)
+            return redirect('MDlmY')  # Replace with your homepage view name
+        else:
+            messages.error(request, 'Invalid username or password')
+
+    return redirect('MDlmY')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('MDlmY')  # Redirect to login page after logout
+
+
+def write_new_post(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        image = request.FILES.get('image')
+        content = request.POST.get('content')
+
+        post = Post(title=title, content=content, image=image)
+        post.save()
+
+        messages.success(request, "Successfully posted!")
+
+    return redirect('MDlmY')
