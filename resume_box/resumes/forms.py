@@ -24,26 +24,36 @@ class ResumeForm(forms.ModelForm):
         ]
         widgets = {
             "first_name": forms.TextInput(
-                attrs={"placeholder": "Juan"}),
+                attrs={"class": "input validator w-full",
+                       "placeholder": "Juan"}),
             "last_name": forms.TextInput(
-                attrs={"placeholder": "Dela Cruz"}),
+                attrs={"class": "input validator w-full",
+                       "placeholder": "Dela Cruz"}),
             "email": forms.EmailInput(
-                attrs={"placeholder": "juandelacruz@gmail.com"}),
+                attrs={"class": "input validator w-full",
+                       "placeholder": "juandelacruz@gmail.com"}),
             "phone_number": forms.TextInput(
-                attrs={"value": "+639",
+                attrs={"class": "input validator w-full",
+                       "value": "+639",
                        "placeholder": "+639XXXXXXXXX"}),
             "date_of_birth": forms.DateInput(
-                attrs={"type": "date",
+                attrs={"class": "input validator w-full",
+                       "type": "date",
                        "max": dateformat.format(
                            value=timezone.now() - relativedelta(years=ALLOWED_AGE),
                            format_string="Y-m-d")}
             ),
             "cover_letter": forms.FileInput(
-                attrs={"accept": ".pdf"}
+                attrs={"class": "file-input validator w-full",
+                       "accept": ".pdf"}
             ),
             "resume": forms.FileInput(
-                attrs={"accept": ".pdf"}
+                attrs={"class": "file-input validator w-full",
+                       "accept": ".pdf"}
             )
+        }
+        labels = {
+            "email": "Gmail account"
         }
 
     def clean_first_name(self):
@@ -71,6 +81,10 @@ class ResumeForm(forms.ModelForm):
 
             if domain not in ALLOWED_DOMAINS:
                 raise forms.ValidationError("Email address not valid.")
+
+            if ResumeModel.objects.filter(email=email).exists():
+                raise forms.ValidationError(
+                    "A resume with this email address already exists.")
         else:
             raise forms.ValidationError("Email address required.")
 
@@ -90,6 +104,10 @@ class ResumeForm(forms.ModelForm):
                     raise forms.ValidationError("Phone number incomplete.")
             else:
                 raise forms.ValidationError("Phone number not valid.")
+
+            if ResumeModel.objects.filter(phone_number=phone_number).exists():
+                raise forms.ValidationError(
+                    "A resume with this phone number already exists.")
         else:
             raise forms.ValidationError("Phone number required.")
 
